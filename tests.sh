@@ -5,6 +5,9 @@
 # stop on first error
 set -eu -o errtrace -o pipefail
 
+cur=$(cd "$(dirname "${0}")" && pwd)
+in_cicd="${GITHUB_ACTIONS:-}"
+
 MULTI_PYTHON="" # set to test multi python envs
 PYTHON_VERSIONS=("3.6" "3.7" "3.8" "3.9" "3.10" "3.11" "3.12" "3.13" "3.14")
 
@@ -37,9 +40,6 @@ test()
   fi
 }
 
-cur=$(cd "$(dirname "${0}")" && pwd)
-in_cicd="${GITHUB_ACTIONS:-}"
-
 if [ -n "${in_cicd}" ]; then
   # patch TERM var in ci/cd
   if [ -z "${TERM}" ]; then
@@ -71,6 +71,7 @@ else
         pyenv install -s "${PY}"
         pyenv shell "${PY}"
         python -m venv ".venv"
+        # shellcheck disable=SC1091
         source ".venv/bin/activate"
         pip install pip --upgrade
         pip install -r requirements.txt
@@ -80,6 +81,7 @@ else
     done
   else
     python3 -m venv ".venv"
+    # shellcheck disable=SC1091
     source ".venv/bin/activate"
     pip install pip --upgrade
     pip install -r requirements.txt
