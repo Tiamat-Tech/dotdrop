@@ -3,7 +3,7 @@
 <br/>
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/deadc0de6/dotdrop)](https://github.com/deadc0de6/dotdrop/releases/latest)
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://spdx.org/licenses/GPL-3.0-only.html)
 
 [![Tests Status](https://github.com/deadc0de6/dotdrop/workflows/tests/badge.svg?branch=master)](https://github.com/deadc0de6/dotdrop/actions)
 [![Doc Status](https://readthedocs.org/projects/dotdrop/badge/?version=latest)](https://dotdrop.readthedocs.io/en/latest/?badge=latest)
