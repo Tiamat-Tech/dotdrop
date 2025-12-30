@@ -38,7 +38,7 @@ test()
 }
 
 cur=$(cd "$(dirname "${0}")" && pwd)
-in_cicd="${GITHUB_WORKFLOW:-}"
+in_cicd="${GITHUB_ACTIONS:-}"
 
 if [ -n "${in_cicd}" ]; then
   # patch TERM var in ci/cd
