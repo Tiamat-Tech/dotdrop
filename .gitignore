@@ -7,6 +7,10 @@ build/
 tags
 env
 venv
+.venv
+.venv*
+.env
+.env*
 .pytest_cache
 .mypy_cache
 

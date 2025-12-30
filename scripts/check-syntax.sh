@@ -117,7 +117,12 @@ done
 # check other python scripts
 echo "-----------------------------------------"
 echo "checking other python scripts with pylint"
-find . -name "*.py" -not -path "./dotdrop/*" -not -regex "\./\.?v?env/.*" | while read -r script; do
+find . \
+  -path "./dotdrop" -prune -o \
+  -path "./.venv" -prune -o \
+  -path "./venv" -prune -o \
+  -path "./build" -prune -o \
+  -name "*.py" -print | while read -r script; do
   echo "checking ${script}"
   pylint -sn \
     --disable=W0012 \
